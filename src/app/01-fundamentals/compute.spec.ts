@@ -1,3 +1,4 @@
+// In testing functions, test to ensure that the result is correct given the correct input, try to cover all cases
 import {compute} from './compute';
 describe('Compute: Unit Test', function(){
             it('Computes positive input',() =>{
