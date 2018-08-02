@@ -14,12 +14,12 @@ describe('TextSummaryPipe', function(){
                   let result = t.transform('Apples',7);
                   console.log('Result is: ',result)
                   console.log(typeof(result));
-                  expect(result).toBe('');
+                  expect(result).toBe('Apples');
             });
             it('Transform returns substring' ,function(){
                   let result = t.transform('AppleJacksWithBadSyntax',2);
                   console.log('Result is: ',result)
                   console.log(typeof(result));
-                  expect(result).toBe('');
+                  expect(result).toBe('Ap...');
             });
 });
