@@ -11,9 +11,15 @@ describe('TextSummaryPipe', function(){
                   expect(result).toBe('');
             });
             it('Transform returns value',function(){
-
+                  let result = t.transform('Apples',7);
+                  console.log('Result is: ',result)
+                  console.log(typeof(result));
+                  expect(result).toBe('');
             });
             it('Transform returns substring' ,function(){
-
+                  let result = t.transform('AppleJacksWithBadSyntax',2);
+                  console.log('Result is: ',result)
+                  console.log(typeof(result));
+                  expect(result).toBe('');
             });
 });
