@@ -1,5 +1,9 @@
+/*
+  Component: Takes an input and returns one of two possible outputs
+  Test: Output consistency, and assignment of default values
+*/
 import {TextSummaryPipe} from './text-summary.pipe';
-fdescribe('TextSummaryPipe', function(){
+describe('Exercise 1: TextSummaryPipe Testing', function(){
             let t :TextSummaryPipe;
             beforeEach(function(){
                   t = new TextSummaryPipe();
