@@ -3,7 +3,7 @@
   Test: Both end states of the class, being liked and unliked
 */
 import {LikeComponent} from './like.component';
-fdescribe('Exercise 2: LikeComponent, testing events',() => {
+describe('Exercise 2: LikeComponent, testing events',() => {
   let inst: LikeComponent;
   beforeEach(() => {
     inst = new LikeComponent();
