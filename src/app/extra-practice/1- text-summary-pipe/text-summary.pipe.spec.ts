@@ -1,5 +1,5 @@
 import {TextSummaryPipe} from './text-summary.pipe';
-describe('TextSummaryPipe', function(){
+fdescribe('TextSummaryPipe', function(){
             let t :TextSummaryPipe;
             beforeEach(function(){
                   t = new TextSummaryPipe();
@@ -22,4 +22,8 @@ describe('TextSummaryPipe', function(){
                   console.log(typeof(result));
                   expect(result).toBe('Ap...');
             });
+            it('Sets limit to 10 if no arg is given', () =>{
+              let ans = t.transform('1234567890')
+              expect(ans).toBe('1234567890');
+            })
 });

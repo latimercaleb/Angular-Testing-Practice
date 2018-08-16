@@ -5,7 +5,7 @@ With Karma & Jasmine we can test the bits and pieces that make up these parts
 
 ## The Tools
 Karma is a runner for tests, it handles the automation part.
-Jasmine is testing framework, it allows for AAA (Arrange, Act, Assert)
+Jasmine is a BDD testing framework, BDD focuses on behavior of the function so what the result should be like, given a certain input, it allows for AAA (Arrange, Act, Assert)
 
 TDD or test driven development is a very big drive for automated testing in most fields automated testing is a greatly desired skill to catch defects before releasing software, where you follow a common build path:
 - Write a test
@@ -28,27 +28,13 @@ So all practices about clean coding all apply to writing tests. Some simple dema
 - Naming convention is standard
 - Tests have a single a responsibility
 
-Running the test suite is done from the cli with ng test, anything with a .spec.ts file gets ran and watched by Karma.
-Karma is configured, but not coded, so reviewing the docs and tweaking the karma.conf.js file will change it's logging experience
+Running the test suite is done from the cli with `ng test`, Tests are in `.spec.ts` files which are written in Jasmine and are run/watched by Karma
+Karma is configured, but not coded, so reviewing the docs and tweaking the `karma.conf.js` file will change it's logging potential
+Import to pull in the component and then using the AAA and `expect` handle the assertion
+`describe` and `it` are the main building blocks of a test suite & test case respectively
 
-In Jasmine, using imports to pull in the component and then using expect, describe and it are the main ways to set up a suite and spec set.
+Tests should not be fragile, sometimes this is impossible to avoid, but updating each test related to a component as that component changes is very important for consistency some tests reuse components, and will require re-set-up which you can use `beforeEach` and `afterEach` when one test affects the running of another test this is called a side-effect, tests should be independent so if side-effects are detected this is a sign of an issue
 
-Jasmine is a BDD type of framework and BDD is a very popular way of doing TDD.
-BDD focuses on behavior of the function so what the result should be like, given a certain input.
-
-Tests should not be fragile, sometimes this is impossible to avoid, but updating each test related to a component as that component changes is very important for good practice.
-
-Some tests reuse components, and will require re-set-up which you can use beforeEach and afterEach for in Jasmine
-
-Side-effect: When one test affects the running of another test
-
-Limitations of unit testing are:
-- Routing - Template bindings -Services
-
-For these Angular environement will need to be simulated
-
-ng test --code-coverage (or ng test -cc) shows test coverage of code body (bugged in Angular-6)
+`ng test --code-coverage` (or `ng test -cc`) shows test coverage of code body (bugged in Angular-6)
 
 Code coverage should be at 70% as a goal and is a metric for testing all parts of the application
-
-Next it's time to deep dive into testing components with more advanced approaches
