@@ -1,8 +1,9 @@
-Testing in Angular-6
+# Testing in Angular-6
+Testing in Angular uses two types of tools commonly which are built into the CLI. **Jasmine** & **Karma** for automated testing
+In Angular, Apps are built out of components(*UI*) & Services(*API*).
+With Karma & Jasmine we can test the bits and pieces that make up these parts
 
-Testing in Angular uses two types of tools commonly which are built into the CLI. Jasmine & Karma for automated testing
-In angular apps are built out of components(UI pieces) & Services(API pieces). With Karma and Jasmine we can test the bits and pieces that make up these parts
-
+## The Tools
 Karma is a runner for tests, it handles the automation part.
 Jasmine is testing framework, it allows for AAA (Arrange,Act,Assert)
 
