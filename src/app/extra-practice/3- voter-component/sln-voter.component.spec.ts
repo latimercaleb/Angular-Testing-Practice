@@ -65,7 +65,7 @@ describe('VoterComponent', () => {
       });
     });
 
-    xdescribe('When I downvote,', () => {
+    describe('When I downvote,', () => {
       it('should decrement total votes', () => {
         component.downVote();
 

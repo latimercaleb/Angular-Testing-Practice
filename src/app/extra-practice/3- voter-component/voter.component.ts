@@ -40,7 +40,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class VoterComponent {
     @Input() othersVote = 0;
     @Input() myVote = 0;
-
     @Output() myVoteChanged = new EventEmitter();
 
     upVote(){
