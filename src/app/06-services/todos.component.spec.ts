@@ -4,7 +4,7 @@ import { TodoService } from './todo.service';
 import {Observable,of,throwError} from 'rxjs';
 
 describe('TodosComponent', () => {
-  let component: TodosComponent;
+ let component: TodosComponent;
  let  service :TodoService;
   beforeEach(() => {
         service = new TodoService(null);
