@@ -3,7 +3,7 @@
   Test: each function and totalVote state as well as custom event being fired or not
 */
 import {VoterComponent} from'./voter.component';
-fdescribe('Exercise 3: Vote component should: ',() => {
+describe('Exercise 3: Vote component should: ',() => {
   let voteCmp :VoterComponent;
   beforeEach(() =>{
         voteCmp = new VoterComponent()
