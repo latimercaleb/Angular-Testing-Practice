@@ -38,3 +38,23 @@ Tests should not be fragile, sometimes this is impossible to avoid, but updating
 `ng test --code-coverage` (or `ng test -cc`) shows test coverage of code body (bugged in Angular-6)
 
 Code coverage should be at 70% as a goal and is a metric for testing all parts of the application
+
+## Services
+To test a service in Jasmine/Karma we need to test only it's functions called native to the component to do this we need a good understanding of observables and spies
+
+### Observables, Observers, Subscriptions
+An observable is an rxjs type that is an exceedingly popular solution to the promise chain problem.
+It's a versatile wrapper around a sync/async data which can be a single thing or multiple things
+
+An observer does something when one of 3 things happen in an observable:
+ - Data is received
+ - An error is received
+ - The stream is complete and no more data is coming in
+
+ The *something* is a subscription, which is a callback set on an observer with handlers for all 3 cases
+
+### Observables & Angular
+ 
+### Using spies in Jasmine
+
+## Integration Testing
