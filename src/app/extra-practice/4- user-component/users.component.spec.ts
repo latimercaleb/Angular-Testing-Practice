@@ -13,7 +13,6 @@ fdescribe('Exercise 4: Compnents & Services',() => {
       service = new UserService(null);
       users = new UsersComponent(service);
     });
-
     it('fetches users properly', function(){
       let ex = [{"id":1,"name":"test"},{"id":2,"name":"tset"},{"id":3,"name":"stet"}];
       spyOn(service,'getUsers').and.callFake(() => {
@@ -22,13 +21,16 @@ fdescribe('Exercise 4: Compnents & Services',() => {
       users.ngOnInit();
       expect(users.users).toEqual(ex);
     })
-    // Fix these at home and get progress on,
     it('delete when confirmed', function(){
+      let simpleObj = {
+           "id": 1,
+           "name": "test"
+     };
+      users.users.push(simpleObj);
       spyOn(window,'confirm').and.returnValue(true);
-      console.log('here');
       let spy = spyOn(service,'deleteUser').and.returnValue(of());
-      users.deleteUser(102);
-      expect(spy).toHaveBeenCalledWith(102);
+      users.deleteUser(simpleObj);
+      expect(spy).toHaveBeenCalledWith(simpleObj);
     })
 
     it('not delete if not confirmed', function(){
