@@ -15,7 +15,7 @@ TDD or test driven development is a very big drive for automated testing in most
 The goal of merging testing & development is that it should help a dev make better working software without introducing time consuming bugs.
 
 ## Testing Types:
-In general there are 3 types:  
+In general there are 3 types:
 - Unit: Standalone testing in isolation without external resources. In Angular this is testing the component directly. No template, service, database or router. If a router or service is in play, you must generate a fake that is guaranteed to produce a certain result. Ideally you want to have at least one test per component function in the class. Easiest and should make up the bulk of a test suite
 - Integration: Test a component with it's external resources, this means making sure that the template works, bindings are correct, and events propagate correctly. You must simulate the environment with routing, dependencies etc. Each service should be part of at least one integration test
 - End to end(*e2e*): A full test of what the app should do in production, meaning that it is run fully and in a browser. Slowest and most cumbersome and very fragile since requirements can be adjusted regularly and should be few. e2e tests should match use cases of a user for things like creating an account, downloading a file, logging in and logging out, etc
@@ -44,17 +44,19 @@ To test a service in Jasmine/Karma we need to test only it's functions called na
 
 ### Observables, Observers, Subscriptions
 An observable is an rxjs type that is an exceedingly popular solution to the promise chain problem.
-It's a versatile wrapper around a sync/async data which can be a single thing or multiple things
+It's a versatile wrapper around a ync/async data-source which can be a single thing or multiple things
 
-An observer does something when one of 3 things happen in an observable:
- - Data is received
- - An error is received
- - The stream is complete and no more data is coming in
+An observer does something when one of 3 things happen in an observable, it has 3 callback functions:
+ - next(): Data is received
+ - error(): An error is received, upon execution the observable stops
+ - complete(): The stream is complete and the observable reports that no more data is coming in, some observables can never finish
 
- The *something* is a subscription, which is a callback set on an observer with handlers for all 3 cases
+ The subscription is a notification that an observer puts on an observable that triggers one of the 3 functions when any of the above events occur
 
-### Observables & Angular
- 
+ It's better to imagine an observable as a stream or thread with one or more values on it. And each of those values can be handled by any of the observer methods.
+ The subscribe method takes two possible parameters, a list of functions  or an object which implements those methods.
+
+In summation the observable listens for data, and in a subscription you define how to handle that data when it comes. Observables can cause memory leaks if not unsubscribed. 
 ### Using spies in Jasmine
 
 ## Integration Testing
