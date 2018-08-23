@@ -24,7 +24,7 @@ class ActivatedRouteStub {
 
 }
 
-fdescribe('UserDetailsComponent', () => {
+describe('UserDetailsComponent', () => {
   let component: UserDetailsComponent;
   let fixture: ComponentFixture<UserDetailsComponent>;
 
