@@ -44,7 +44,7 @@ To test a service in Jasmine/Karma we need to test only it's functions called na
 
 ### Observables, Observers, Subscriptions
 An observable is an rxjs type that is an exceedingly popular solution to the promise chain problem.
-It's a versatile wrapper around a ync/async data-source which can be a single thing or multiple things
+It's a versatile wrapper around a sync/async data-source which can be a single thing or multiple things
 
 An observer does something when one of 3 things happen in an observable, it has 3 callback functions:
  - next(): Data is received
@@ -56,7 +56,10 @@ An observer does something when one of 3 things happen in an observable, it has 
  It's better to imagine an observable as a stream or thread with one or more values on it. And each of those values can be handled by any of the observer methods.
  The subscribe method takes two possible parameters, a list of functions  or an object which implements those methods.
 
-In summation the observable listens for data, and in a subscription you define how to handle that data when it comes. Observables can cause memory leaks if not unsubscribed. 
-### Using spies in Jasmine
+In summation the observable listens for data, and in a subscription you define how to handle that data when it comes. Observables can cause memory leaks if not unsubscribed.
+In Jasmine we make use of spies to stub out/fake services, observables and return requests in order to fully test component functionality
 
 ## Integration Testing
+Is required for testing the other parts of an Angular app such as routing, templates and services. Setup of integration testing in Angular is a little more work than usual, primarily with `TestBed` and async operations
+
+For integration testing it's important for Angular to generate a full-instance of the component rather than making an instance of the class. To do so the TestBed utility can be imported and a module can be created in which you pass the component to test as an argument for setup. There are various functions used in the Integration Testing section that further elaborate use and purpose

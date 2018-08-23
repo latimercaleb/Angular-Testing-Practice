@@ -2,7 +2,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HighlightDirective } from './highlight.directive';
 import { By } from '@angular/platform-browser';
-import { Component } from '@angular/core'; 
+import { Component } from '@angular/core';
 
 @Component({
   template: `
@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
     <p highlight>Second</p>
   `
 })
-class DirectiveHostComponent { 
+class DirectiveHostComponent {
 }
 
 describe('HighlightDirective', () => {
@@ -25,6 +25,10 @@ describe('HighlightDirective', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DirectiveHostComponent);
-    fixture.detectChanges(); 
+    fixture.detectChanges();
   });
+
+  /*
+    When testing a property directive there must be a host-component included in the test file to apply different ways in can be used
+  */
 });
