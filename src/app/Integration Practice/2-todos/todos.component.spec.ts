@@ -2,23 +2,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { HttpModule } from '@angular/http';
 import { TodosComponent } from './todos.component';
+import {TodoService} from './todo.service';
+import {Observable,of} from 'rxjs';
 
-//NOTE: I've deliberately excluded this suite from running
-// because the test will fail. This is because we have not 
-// provided the TodoService as a dependency to TodosComponent. 
-// 
-// When you get to Lecture 6 (Providing Dependencies), be sure
-// to remove "x" from "xdescribe" below. 
-
-xdescribe('TodosComponent', () => {
+// Previously dependencies were "faked" using spies, this approach doesn't work with integration tests, dependencies must be added via a provider & import property in the metadata object of configureTestingModule
+describe('TodosComponent', () => {
   let component: TodosComponent;
   let fixture: ComponentFixture<TodosComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodosComponent ]
+      imports: [HttpModule],
+      declarations: [ TodosComponent ],
+      providers: [TodoService]
     })
     .compileComponents();
   }));
@@ -26,10 +24,18 @@ xdescribe('TodosComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TodosComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    // fixture.detectChanges(); // Removing because calling this calls ngOnInit() which ruins the point of the stub
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should load todos from server', () => {
+    let service = TestBed.get(TodoService); // Brings dependency in at the module level as a singleton, must be imported as a provider in app module or if providers are added in at the component level
+    //let service = fixture.debugElement.injector.get(TodoService); // Second means of grabbing it natively as a direct import
+    let t = of([1,2,3]);
+    spyOn(service,'getTodos').and.returnValue(t);
+    fixture.detectChanges();
+    console.log(t);
+    console.log(component.todos);
+    expect(component.todos.length).toBe(3);
   });
+
 });

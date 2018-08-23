@@ -2,7 +2,7 @@ import { VoterComponent } from './voter.component';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import{ By } from '@angular/platform-browser';
 
-fdescribe('VoterComponent', () => {
+describe('VoterComponent', () => {
   let component :VoterComponent;
   let fixture :ComponentFixture<VoterComponent>;
   // In integration tests, Angular must make an instance of the component, most of this is done automagically from the cli
