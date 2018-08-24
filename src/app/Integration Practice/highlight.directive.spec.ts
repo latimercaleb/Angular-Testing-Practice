@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
 class DirectiveHostComponent {
 }
 
-fdescribe('HighlightDirective', () => {
+describe('HighlightDirective', () => {
   let fixture: ComponentFixture<DirectiveHostComponent>;
 
   beforeEach(async(() => {
