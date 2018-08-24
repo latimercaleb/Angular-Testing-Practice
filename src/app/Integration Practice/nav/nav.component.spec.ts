@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { NavComponent } from './nav.component';
 import {RouterLinkWithHref} from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-fdescribe('NavComponent', () => {
+describe('NavComponent', () => {
   let component: NavComponent;
   let fixture: ComponentFixture<NavComponent>;
 

@@ -57,9 +57,13 @@ An observer does something when one of 3 things happen in an observable, it has 
  The subscribe method takes two possible parameters, a list of functions  or an object which implements those methods.
 
 In summation the observable listens for data, and in a subscription you define how to handle that data when it comes. Observables can cause memory leaks if not unsubscribed.
-In Jasmine we make use of spies to stub out/fake services, observables and return requests in order to fully test component functionality
+In Jasmine we make use of spies to stub out/fake services, observables and return requests in order to fully test component functionality, useful for services, in unit tests. Since in a unit test we want isolate a component from outside resources. Spies can be used to fake services to ignore backend calls and continue with component testing.
+
+Make a service, pass in null, pass the service to the componenent in beforeEach. And then use a spy to make a stub, a dummy method that replaces a class method.
+
+`spyOn(componentName, 'ComponentMethod')` is how it works can use `.and.callFake()` to take in fake params and even return fake results for the test, don't forget if it returns an observable to make an observer to subscribe to the result to use it in a test.
 
 ## Integration Testing
-Is required for testing the other parts of an Angular app such as routing, templates and services. Setup of integration testing in Angular is a little more work than usual, primarily with `TestBed` and async operations
+Unit tests are good for state, forms, events and even services however, things like routers or templates do not get covered. Integration testing is needed for those. Setup of integration testing in Angular is a little more work than usual, primarily with `TestBed` and async operations
 
 For integration testing it's important for Angular to generate a full-instance of the component rather than making an instance of the class. To do so the TestBed utility can be imported and a module can be created in which you pass the component to test as an argument for setup. There are various functions used in the Integration Testing section that further elaborate use and purpose
