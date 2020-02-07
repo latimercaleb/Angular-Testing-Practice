@@ -1,0 +1,6 @@
+<div style='text-align-last: center'>
+<h1>Test case Practice</h1>
+<!-- <p class="one {{classCol ? '' : 'two'}}">I am here check my class!</p> -->
+<p [ngClass]="{'one':classCol, 'two': classCol == false}">I have ngClass, test my class!</p>
+<button (click)="changeClass()" class='btn'>Change Color!</button>
+</div>
