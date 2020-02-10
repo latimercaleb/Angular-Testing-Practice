@@ -1,0 +1,22 @@
+<div>
+<h3>Exercise for making routing and guard tests</h3>
+<ul>
+  <li>Routing that works: Two pages home, about. Routing checks active status</li>
+  <li>Routing imposes guards</li>
+  <li>Use spies to stub for guard services</li>
+</ul>
+</div>
+<hr>
+<div>
+  <h2>Nav Links here</h2>
+  <ul>
+    <li><a [routerLink]="['/first']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+      true}">First</a></li>
+    <li><a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+      true}">Home</a></li>
+    <li><a [routerLink]="['/about']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+      true}">About</a></li>
+   </ul>
+   <h4>Landing page here</h4>
+   <button (click) = "updateActivationState()">Change activation state</button>
+</div>

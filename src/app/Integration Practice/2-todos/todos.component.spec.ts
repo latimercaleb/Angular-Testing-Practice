@@ -8,7 +8,7 @@ import {TodoService} from './todo.service';
 import {Observable,of} from 'rxjs';
 
 // Previously dependencies were "faked" using spies, this approach doesn't work with integration tests, dependencies must be added via a provider & import property in the metadata object of configureTestingModule
-fdescribe('TodosComponent', () => {
+describe('TodosComponent', () => {
   let component: TodosComponent;
   let fixture: ComponentFixture<TodosComponent>;
 
@@ -27,7 +27,7 @@ fdescribe('TodosComponent', () => {
     // fixture.detectChanges(); // Removing because calling this calls ngOnInit() which ruins the point of the stub
   });
 
-  xit('should load todos from server', () => {
+  it('should load todos from server', () => {
     let service = TestBed.get(TodoService); // Brings dependency in at the module level as a singleton, must be imported as a provider in app module or if providers are added in at the component level
     //let service = fixture.debugElement.injector.get(TodoService); // Second means of grabbing it natively as a direct import
     let t = of([1,2,3]);
