@@ -3,12 +3,12 @@
   <ul>
     <li><a [routerLink]="['/first']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
       true}">First</a></li>
-    <li><a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+    <li class='home'><a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
       true}">Home</a></li>
-    <li><a [routerLink]="['/about']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+    <li class = 'about'><a [routerLink]="['/about']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
       true}">About</a></li>
    </ul>
    <h4>Landing page here</h4>
    <h5>{{renderServiceState}}</h5>
-   <button (click) = "updateActivationState()">Change activation state</button>
+   <button (click) = "updateActivationState()" class='btn'>Change activation state</button>
 </div>

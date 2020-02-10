@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { SpecialparagraphComponent } from './specialparagraph.component';
 
-fdescribe('SpecialparagraphComponent', () => {
+describe('SpecialparagraphComponent', () => {
   let component: SpecialparagraphComponent;
   let fixture: ComponentFixture<SpecialparagraphComponent>;
 
@@ -55,7 +55,7 @@ fdescribe('SpecialparagraphComponent', () => {
     expect(result).toBeTruthy();
   });
   
-  fit('should start with class=one, in case of dynamic ng class', () => {
+  it('should start with class=one, in case of dynamic ng class', () => {
     fixture.detectChanges();
     let tag = fixture.debugElement.query(By.css('.one'));
     // Classes added the Angular way (ngClass) go into a different property than normal
@@ -63,7 +63,7 @@ fdescribe('SpecialparagraphComponent', () => {
     expect(tagClasses).toBe(true);
   });
 
-  fit('should have class=two on click, in the case of a dynamic ng class', () => {
+  it('should have class=two on click, in the case of a dynamic ng class', () => {
     const btn = fixture.debugElement.query(By.css('.btn'));
     btn.triggerEventHandler('click',{});
     fixture.detectChanges();
