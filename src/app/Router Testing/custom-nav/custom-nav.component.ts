@@ -6,13 +6,15 @@ import {UserActiveService} from '../userActive.service';
   styleUrls: ['./custom-nav.component.css']
 })
 export class CustomNavComponent implements OnInit {
-
-  constructor(private uaService: UserActiveService) { }
+  renderServiceState: boolean;
+  constructor(private uaService: UserActiveService) {}
 
   ngOnInit() {
+    this.renderServiceState = this.uaService.getActiveState();
   }
 
   updateActivationState(){
     this.uaService.changeActiveState();
+    this.renderServiceState = this.uaService.getActiveState();
   }
 }
